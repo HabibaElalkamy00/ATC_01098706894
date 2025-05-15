@@ -1,0 +1,62 @@
+<section class="text-center text-lg-start">
+  <div class="container py-4">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="card cascading-right bg-body-tertiary" style="backdrop-filter: blur(30px);">
+          <div class="card-body p-5 shadow-5 text-center">
+            <h2 class="fw-bold mb-5">{{ 'REGISTER' | translate }}</h2>
+
+            <form (ngSubmit)="onRegister()" #registerForm="ngForm">
+              <!-- First and Last Name -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <label class="form-label">{{ 'FIRST_NAME' | translate }}</label>
+                  <input type="text" class="form-control" [(ngModel)]="firstName" name="firstName" required />
+                </div>
+                <div class="col-md-6 mb-4">
+                  <label class="form-label">{{ 'LAST_NAME' | translate }}</label>
+                  <input type="text" class="form-control" [(ngModel)]="lastName" name="lastName" required />
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="mb-4">
+                <label class="form-label">{{ 'EMAIL' | translate }}</label>
+                <input type="email" class="form-control" [(ngModel)]="email" name="email" required />
+              </div>
+
+              <!-- Password -->
+              <div class="mb-4">
+                <label class="form-label">{{ 'PASSWORD' | translate }}</label>
+                <input type="password" class="form-control" [(ngModel)]="password" name="password" required />
+              </div>
+
+              <!-- Newsletter checkbox -->
+              <div class="form-check d-flex justify-content-center mb-4">
+                <input class="form-check-input me-2" type="checkbox" id="newsletter" />
+                <label class="form-check-label" for="newsletter">
+                  {{ 'SUBSCRIBE_NEWSLETTER' | translate }}
+                </label>
+              </div>
+
+              <!-- Submit -->
+              <button type="submit" class="btn btn-warning btn-block mb-4 w-100">
+                {{ 'REGISTER_BUTTON' | translate }}
+              </button>
+            </form>
+
+            <!-- Social login buttons -->
+            <div class="text-center">
+              <p>{{ 'OR_SIGN_UP_WITH' | translate }}</p>
+              <!-- Add social buttons if needed -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <img src="../../assets/img/pexels-axp-photography-500641970-18934609 (1).jpg" class="w-100 rounded-4 shadow-4" alt="" />
+      </div>
+    </div>
+  </div>
+</section>

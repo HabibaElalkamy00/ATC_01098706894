@@ -1,0 +1,12 @@
+<div class="container text-center py-5">
+  <h1 class="display-4 text-success fw-bold">🎉 {{ 'CONGRATS' | translate }}</h1>
+  <p class="lead mt-3">{{ 'BOOKING_SUCCESSFUL_MESSAGE' | translate }}</p>
+
+  <img src="assets/images/congrats.png" alt="congrats" class="img-fluid my-4" style="max-height: 250px;">
+
+  <a routerLink="/" (click)="goHome()" class="btn btn-outline-success btn-lg mt-3">
+    {{ 'Go to home' | translate }}
+  </a>
+</div>
+
+

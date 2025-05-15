@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #f1f1f1 !important;
+}
+
+body.dark-mode .card {
+  background-color: #1f1f1f !important;
+  color: white;
+}
+
+body.dark-mode .navbar {
+  background-color: #212529 !important;
+}
+
+body.dark-mode .btn {
+  color: white;
+  border-color: white;
+}
+
+

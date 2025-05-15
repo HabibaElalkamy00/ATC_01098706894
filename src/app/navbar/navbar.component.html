@@ -1,0 +1,36 @@
+<nav class="navbar bg-primary navbar-expand-lg mt-1" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/"><img src="../../assets/images/ChatGPT Image May 15, 2025, 04_40_32 AM.png" style="width: 50px; height: 50px;"></a>
+      <!-- <a class="navbar-brand" routerLink="/">GoAttend</a> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/">{{'Home' | translate}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login">{{'Login' | translate}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/register">{{'Register' | translate}}</a>
+          </li>
+          <li class="nav-item" *ngIf="isAdmin">
+            <a class="nav-link" routerLink="/admin">{{'Admin Panel' | translate}}</a>
+          </li>
+        </ul>
+        
+        <button class="btn btn-sm btn-outline-light ms-auto me-3" (click)="toggleTheme()">
+          {{ isDark ? ('DARK_MODE' | translate) : ('LIGHT_MODE' | translate) }}
+        </button>
+
+        <div class="lang-switcher d-flex gap-2 justify-content-end">
+          <button class="btn btn-sm btn-outline-light" (click)="switchLang('en')">EN</button>
+          <button class="btn btn-sm btn-outline-light" (click)="switchLang('ar')">عربي</button>
+        </div>
+
+      </div>
+    </div>
+</nav>
+

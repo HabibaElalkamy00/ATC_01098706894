@@ -1,0 +1,55 @@
+<div class="container py-5" *ngIf="event">
+  <div class="row">
+    <!-- Image -->
+    <div class="col-md-6 mb-4">
+      <img [src]="event.image" class="img-fluid rounded shadow h-100" [alt]="event.name">
+    </div>
+
+    <!-- Info -->
+    <div class="col-md-6">
+      <h2 class="mb-2">{{ event.name | translate }}</h2>
+      <p class="text-muted mb-1">{{ event.category | translate }} </p>
+
+      <p><strong>{{ 'DESCRIPTION' | translate }}:</strong><br>{{ event.description | translate }}</p>
+      <p><strong>{{ 'EVENT_DATE' | translate }}:</strong> {{ event.date | translate }}</p>
+      <p><strong>{{ 'EVENT_TIME' | translate }}:</strong> {{ event.time | translate }}</p>
+      <p><strong>{{ 'VENUE' | translate }}:</strong> {{ event.venue | translate }}</p>
+      <p><strong>{{ 'TICKETS_AVAILABLE' | translate }}:</strong> {{ event.tickets | translate }}</p>
+      <p><strong>{{ 'TICKET_PRICE' | translate }}:</strong> <span class="text-success">{{ event.price | translate }} {{'EGP' | translate}}</span></p>
+
+      <p><strong>{{ 'Rating' | translate }}:</strong>
+        <span *ngFor="let star of getStars(event.rating)" class="text-warning">&#9733;</span>
+        ({{ event.rating }}/5)
+      </p>
+
+      <p><strong>{{ 'Speakers' | translate }}:</strong></p>
+      <ul>
+        <li *ngFor="let speaker of event.speakers" style="list-style-type: none;">{{ speaker | translate }}</li>
+      </ul>
+
+      <p>
+        <strong>{{ 'Status' | translate }}:</strong>
+        <span class="badge" [ngClass]="event.booked ? 'bg-secondary' : 'bg-success'">
+          {{ event.booked ? ('BOOKED' | translate) : ('Available' | translate) }}
+        </span>
+      </p>
+
+      <button 
+        class="btn btn-success w-100 mt-3"
+        (click)="book()"
+        [disabled]="isAlreadyBooked">
+        {{ isAlreadyBooked ? ('ALREADY_BOOKED' | translate) : ('BOOK_NOW' | translate) }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Map -->
+  <div class="row mt-5" *ngIf="event.safeMapUrl">
+    <div class="col-12">
+      <h4>{{ 'EVENT_LOCATION' | translate }}</h4>
+      <div class="ratio ratio-16x9">
+        <iframe [src]="event.safeMapUrl" style="border:0;" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
