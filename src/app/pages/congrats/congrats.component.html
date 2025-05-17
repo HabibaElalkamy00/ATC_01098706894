@@ -1,12 +1,26 @@
-<div class="container text-center py-5">
-  <h1 class="display-4 text-success fw-bold">🎉 {{ 'CONGRATS' | translate }}</h1>
-  <p class="lead mt-3">{{ 'BOOKING_SUCCESSFUL_MESSAGE' | translate }}</p>
+<div class="container py-5 text-center" data-aos="zoom-in" data-aos-duration="1000">
+  <div class="p-5 bg-light rounded-4 shadow-lg position-relative overflow-hidden">
 
-  <img src="assets/images/congrats.png" alt="congrats" class="img-fluid my-4" style="max-height: 250px;">
+    <!-- Confetti Emoji Floating -->
+    <div class="position-absolute top-0 start-0 w-100 h-100 confetti-layer"></div>
 
-  <a routerLink="/" (click)="goHome()" class="btn btn-outline-success btn-lg mt-3">
-    {{ 'Go to home' | translate }}
-  </a>
+    <h1 class="display-3 fw-bold text-gradient mb-4" data-aos="fade-down">
+      {{ 'CONGRATS' | translate }}
+    </h1>
+
+    <p class="lead fs-4 text-secondary" data-aos="fade-up" data-aos-delay="200">
+      {{ 'BOOKING_SUCCESSFUL_MESSAGE' | translate }}
+    </p>
+
+    <a routerLink="/" (click)="goHome()" 
+      class="btn btn-lg px-5 py-3 mt-4 fw-bold shadow-sm btn-blue-fire"
+      data-aos="zoom-in-up" data-aos-delay="400">
+      {{ 'Go to home' | translate }}
+    </a>
+
+
+
+  </div>
 </div>
 
 

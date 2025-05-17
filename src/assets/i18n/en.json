@@ -124,6 +124,9 @@
   "LAST_NAME": "Last Name",
   "SUBSCRIBE_NEWSLETTER": "Subscribe to our newsletter",
   "c": "or sign up with",
-  "DARK_MODE": "🌙 Dark",
-  "LIGHT_MODE": "🌞 Light"
+  "DARK_MODE": "Dark",
+  "LIGHT_MODE": "Light",
+  "OR_SIGN_UP_WITH": "or sign up with",
+  "ALREADY_BOOKED": "Already Booked"
+
 }

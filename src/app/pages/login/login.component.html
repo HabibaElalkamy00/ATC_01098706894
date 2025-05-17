@@ -1,7 +1,7 @@
 <section class="text-center text-lg-start">
   <div class="container py-4">
-    <div class="row g-0 align-items-center">
-      <div class="col-lg-6 mb-5 mb-lg-0" data-aos="zoom-out-right" data-aos-duration="3000">
+    <div class="row g-0 align-items-center" data-aos="zoom-out-right" data-aos-duration="3000">
+      <div class="col-lg-6 mb-5 mb-lg-0">
         <div class="card cascading-right bg-body-tertiary" style="backdrop-filter: blur(30px);">
           <div class="card-body p-5 shadow-5 text-center">
             <h2 class="fw-bold mb-5">{{ 'LOGIN' | translate }}</h2>
@@ -19,23 +19,30 @@
               </div>
 
               <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-block mb-3 w-100">
+              <button 
+                type="submit" 
+                class="btn w-100 mb-3 fw-bold bg-gradient-login shadow">
                 {{ 'LOGIN_BUTTON' | translate }}
               </button>
+
 
               <a href="#" class="text-decoration-none mb-3 d-block">{{ 'FORGOT_PASSWORD' | translate }}</a>
               <hr>
 
-              <button type="button" class="btn btn-warning btn-block mt-4 w-100" routerLink="/register">
+              <button 
+                type="button" 
+                class="btn w-100 mt-4 bg-gradient-register shadow"
+                routerLink="/register">
                 {{ 'REGISTER_BUTTON' | translate }}
               </button>
+
             </form>
           </div>
         </div>
       </div>
 
       <div class="col-lg-6 mb-5 mb-lg-0 image1">
-        <img src="../../../assets/images/ChatGPT Image May 9, 2025, 02_42_00 AM.png" class="w-100 rounded-4 shadow-4" alt="" />
+        <img src="../../../assets/images/pexels-divinetechygirl-1181673.jpg" class="w-100 rounded-4 shadow-4" alt="" />
       </div>
     </div>
   </div>

@@ -13,14 +13,14 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  // 🔹 إدارة الفعاليات
   events: any[] = [];
+  bookings: any[] = [];
   showAddForm = false;
   eventForm!: FormGroup;
   editingEventId: string | null = null;
 
-  // 🔹 عرض الحجوزات
-  bookings: any[] = [];
+  // ✅ متغير لتفعيل الوضع الليلي
+  isDarkMode: boolean = false;
 
   constructor(
     private eventService: EventService,
@@ -29,6 +29,8 @@ export class AdminComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.isDarkMode = localStorage.getItem('theme') === 'dark';
+
     this.loadEvents();
     this.loadBookings();
 
@@ -46,21 +48,18 @@ export class AdminComponent implements OnInit {
     });
   }
 
-  // ✅ تحميل الفعاليات
   loadEvents(): void {
     this.eventService.getEvents().subscribe(data => {
       this.events = data;
     });
   }
 
-  // ✅ تحميل الحجوزات
   loadBookings(): void {
     this.firestoreService.getAllBookings().subscribe(data => {
       this.bookings = data;
     });
   }
 
-  // ✅ إضافة أو تحديث حدث
   onSubmit(): void {
     if (this.editingEventId) {
       this.eventService.updateEvent(this.editingEventId, this.eventForm.value);
@@ -73,14 +72,12 @@ export class AdminComponent implements OnInit {
     this.showAddForm = false;
   }
 
-  // ✅ تعديل حدث
   editEvent(event: any): void {
     this.eventForm.patchValue(event);
     this.editingEventId = event.id;
     this.showAddForm = true;
   }
 
-  // ✅ حذف حدث
   deleteEvent(id: string): void {
     if (confirm('Are you sure you want to delete this event?')) {
       this.eventService.deleteEvent(id);

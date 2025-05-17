@@ -21,14 +21,13 @@ export class LoginComponent {
   onLogin() {
   signInWithEmailAndPassword(this.auth, this.email, this.password)
     .then(() => {
-      const hasPending = this.authService.hasPendingAction(); // ✅
+      const hasPending = this.authService.hasPendingAction(); 
       this.authService.runPendingAction();
 
       if (!hasPending) {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/']);
       }
     })
     .catch(error => alert(error.message));
 }
-
-}
+} 

@@ -1,13 +1,13 @@
 import { Component, Renderer2, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { Auth } from '@angular/fire/auth';
+import { Router, RouterLink } from '@angular/router'; // ✅ أضف Router هنا
+import { Auth, signOut } from '@angular/fire/auth';   // ✅ signOut من firebase
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterLink, CommonModule , TranslateModule],
+  imports: [RouterLink, CommonModule, TranslateModule],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
@@ -18,6 +18,7 @@ export class NavbarComponent implements OnInit {
   constructor(
     private renderer: Renderer2,
     private auth: Auth,
+    private router: Router,              // ✅ استخدم Router للتوجيه بعد Logout
     public translate: TranslateService
   ) {}
 
@@ -69,5 +70,15 @@ export class NavbarComponent implements OnInit {
     const dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.body.setAttribute('dir', dir);
     document.documentElement.setAttribute('lang', lang);
+  }
+
+  logout() {
+    signOut(this.auth)
+      .then(() => {
+        this.router.navigate(['/login']);
+      })
+      .catch(error => {
+        console.error('Logout failed:', error.message);
+      });
   }
 }

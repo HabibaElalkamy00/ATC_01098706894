@@ -1,53 +1,69 @@
-<div class="container py-5" *ngIf="event">
-  <div class="row">
-    <!-- Image -->
-    <div class="col-md-6 mb-4">
-      <img [src]="event.image" class="img-fluid rounded shadow h-100" [alt]="event.name">
+<div class="container py-5" *ngIf="event" data-aos="fade-up" data-aos-duration="1000">
+  <div class="row gx-5 align-items-stretch">
+    
+    <!-- Left Side: Image -->
+    <div class="col-lg-6 mb-4 mb-lg-0" data-aos="zoom-in" data-aos-delay="100">
+      <div class="h-100 overflow-hidden rounded-4 shadow-lg border-0" style="min-height: 100%;">
+        <img [src]="event.image" alt="{{ event.name }}" class="w-100 h-100 object-fit-cover rounded-4" style="object-position: center;">
+      </div>
     </div>
 
-    <!-- Info -->
-    <div class="col-md-6">
-      <h2 class="mb-2">{{ event.name | translate }}</h2>
-      <p class="text-muted mb-1">{{ event.category | translate }} </p>
+    <!-- Right Side: Details -->
+    <div class="col-lg-6 d-flex flex-column justify-content-between" data-aos="fade-left" data-aos-delay="200">
+      <div class="bg-dark text-light p-4 p-md-5 rounded-4 shadow-lg h-100">
+        <h1 class="mb-3 fw-bold text-gradient">{{ event.name | translate }}</h1>
 
-      <p><strong>{{ 'DESCRIPTION' | translate }}:</strong><br>{{ event.description | translate }}</p>
-      <p><strong>{{ 'EVENT_DATE' | translate }}:</strong> {{ event.date | translate }}</p>
-      <p><strong>{{ 'EVENT_TIME' | translate }}:</strong> {{ event.time | translate }}</p>
-      <p><strong>{{ 'VENUE' | translate }}:</strong> {{ event.venue | translate }}</p>
-      <p><strong>{{ 'TICKETS_AVAILABLE' | translate }}:</strong> {{ event.tickets | translate }}</p>
-      <p><strong>{{ 'TICKET_PRICE' | translate }}:</strong> <span class="text-success">{{ event.price | translate }} {{'EGP' | translate}}</span></p>
+        <span class="badge bg-gradient-category mb-3 px-3 py-2 fs-6">{{ event.category | translate }}</span>
 
-      <p><strong>{{ 'Rating' | translate }}:</strong>
-        <span *ngFor="let star of getStars(event.rating)" class="text-warning">&#9733;</span>
-        ({{ event.rating }}/5)
-      </p>
+        <p><strong>{{ 'DESCRIPTION' | translate }}: </strong><br>{{ event.description | translate }}</p>
+        <p><strong>{{ 'EVENT_DATE' | translate }}: </strong> {{ event.date | translate }}</p>
+        <p><strong>{{ 'EVENT_TIME' | translate }}: </strong> {{ event.time | translate }}</p>
+        <p><strong>{{ 'VENUE' | translate }}: </strong> {{ event.venue | translate }}</p>
+        <p><strong>{{ 'TICKETS_AVAILABLE' | translate }}: </strong> {{ event.tickets | translate }}</p>
+        <p><strong>{{ 'TICKET_PRICE' | translate }}: </strong> 
+          <span class="text-success fw-bold">{{ event.price | translate }} {{ 'EGP' | translate }}</span>
+        </p>
 
-      <p><strong>{{ 'Speakers' | translate }}:</strong></p>
-      <ul>
-        <li *ngFor="let speaker of event.speakers" style="list-style-type: none;">{{ speaker | translate }}</li>
-      </ul>
+        <p><strong>{{ 'Rating' | translate }}: </strong>
+          <span *ngFor="let star of getStars(event.rating)" class="text-warning">&#9733;</span>
+          ({{ event.rating }}/5)
+        </p>
 
-      <p>
-        <strong>{{ 'Status' | translate }}:</strong>
-        <span class="badge" [ngClass]="event.booked ? 'bg-secondary' : 'bg-success'">
-          {{ event.booked ? ('BOOKED' | translate) : ('Available' | translate) }}
-        </span>
-      </p>
+        <div class="mb-2">
+          <strong>{{ 'Speakers' | translate }}: </strong>
+          <ul class="ps-3">
+            <li *ngFor="let speaker of event.speakers" style="list-style-type: none;">{{ speaker | translate }}</li>
+          </ul>
+        </div>
 
-      <button 
-        class="btn btn-success w-100 mt-3"
-        (click)="book()"
-        [disabled]="isAlreadyBooked">
-        {{ isAlreadyBooked ? ('ALREADY_BOOKED' | translate) : ('BOOK_NOW' | translate) }}
-      </button>
+        <p><strong>{{ 'Status' | translate }}: </strong>
+          <span class="badge px-3 py-2" [ngClass]="event.booked ? 'bg-secondary' : 'bg-success'">
+            {{ event.booked ? ('BOOKED' | translate) : ('Available' | translate) }}
+          </span>
+        </p>
+
+        <button 
+          class="btn w-100 py-3 mt-4 fw-bold shadow"
+          [ngClass]="{
+            'bg-gradient-book': !isAlreadyBooked,
+            'bg-gradient-booked': isAlreadyBooked
+          }"
+          [disabled]="isAlreadyBooked"
+          (click)="book()"
+          data-aos="fade-up" data-aos-delay="300">
+          {{ isAlreadyBooked ? ('ALREADY_BOOKED' | translate) : ('BOOK_NOW' | translate) }}
+        </button>
+
+
+      </div>
     </div>
   </div>
 
-  <!-- Map -->
-  <div class="row mt-5" *ngIf="event.safeMapUrl">
+  <!-- Map Section -->
+  <div class="row mt-5" *ngIf="event.safeMapUrl" data-aos="zoom-in-up" data-aos-delay="400">
     <div class="col-12">
-      <h4>{{ 'EVENT_LOCATION' | translate }}</h4>
-      <div class="ratio ratio-16x9">
+      <h4 class="mb-3">{{ 'EVENT_LOCATION' | translate }}</h4>
+      <div class="ratio ratio-16x9 rounded-4 shadow">
         <iframe [src]="event.safeMapUrl" style="border:0;" allowfullscreen loading="lazy"></iframe>
       </div>
     </div>

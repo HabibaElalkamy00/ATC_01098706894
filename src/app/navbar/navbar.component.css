@@ -1,0 +1,58 @@
+.bg-gradient-mood {
+  background: linear-gradient(135deg,#0072ff, #00c6ff); 
+  color: white !important;
+  border: none;
+  transition: all 0.3s ease-in-out;
+
+}
+
+.bg-gradient-mood:hover {
+  background: linear-gradient(to right, var(--blue-fire-end), var(--blue-fire-start));
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 114, 255, 0.3);
+}
+
+.bg-gradient-en {
+  background: linear-gradient(135deg,#0072ff, #00c6ff); 
+  color: white !important;
+  border: none;
+  transition: all 0.3s ease-in-out;
+
+}
+
+.bg-gradient-en:hover {
+  background: linear-gradient(to right, var(--blue-fire-end), var(--blue-fire-start));
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 114, 255, 0.3);
+}
+
+.bg-gradient-ar{
+  background: linear-gradient(135deg,#0072ff, #00c6ff); 
+  color: white !important;
+  border: none;
+  transition: all 0.3s ease-in-out;
+
+}
+
+.bg-gradient-ar:hover {
+  background: linear-gradient(to right, var(--blue-fire-end), var(--blue-fire-start));
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 114, 255, 0.3);
+}
+
+.bg-gradient-logout {
+  background: linear-gradient(135deg, #ffb347, #ff7e5f);
+  color: #4a2c00 !important;
+  font-weight: bold;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  padding: 15px;
+}
+
+.bg-gradient-logout:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 145, 0, 0.4);
+}

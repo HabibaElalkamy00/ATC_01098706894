@@ -1,0 +1,20 @@
+.text-gradient {
+  background: linear-gradient(to right, #ff6ec4, #7873f5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-category {
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+}
+
+.bg-gradient-book {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  border: none;
+}
+
+button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.95;
+}

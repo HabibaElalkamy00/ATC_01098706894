@@ -1,21 +1,100 @@
-/* You can add global styles to this file, and also import other style files */
 body.dark-mode {
   background-color: #121212 !important;
-  color: #f1f1f1 !important;
+  color: white !important; 
+}
+
+body.dark-mode * {
+  color: white !important; 
 }
 
 body.dark-mode .card {
   background-color: #1f1f1f !important;
-  color: white;
+  color: white !important;
 }
 
 body.dark-mode .navbar {
   background-color: #212529 !important;
+  color: white !important;
 }
 
-body.dark-mode .btn {
-  color: white;
-  border-color: white;
+body.dark-mode footer {
+  background-color: #1f1f1f !important;
+  color: white !important;              
 }
+
+.table-dark th,
+.table-dark td {
+  background-color: #1e1e2f;
+  color: #f1f1f1;
+}
+
+.bg-dark {
+  background-color: #2c2c3e !important;
+}
+
+.text-white {
+  color: #ffffff !important;
+}
+
+
+body{
+  background-color: #f1f1f1;
+}
+
+:root {
+  --blue-fire-start: #00c6ff;
+  --blue-fire-end: #0072ff;
+  --blue-fire-hover: #0057d8;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--blue-fire-start), var(--blue-fire-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-blue-fire {
+  background: linear-gradient(to right, var(--blue-fire-start), var(--blue-fire-end));
+  color: white;
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-blue-fire:hover {
+  background: linear-gradient(to right, var(--blue-fire-end), var(--blue-fire-start));
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 114, 255, 0.3);
+}
+
+.bg-gradient-book {
+  background: linear-gradient(135deg,#0072ff, #00c6ff); 
+  color: white !important;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.bg-gradient-book:hover {
+  box-shadow: 0 8px 20px rgba(0, 114, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.bg-gradient-booked {
+  background: linear-gradient(135deg, #ffb347, #ff7e5f); /* خوخي */
+  color: #222 !important;
+  border: none;
+  cursor: not-allowed;
+  transition: all 0.3s ease-in-out;
+}
+
+.bg-gradient-booked:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+
+
+
 
 
