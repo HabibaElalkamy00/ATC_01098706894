@@ -36,26 +36,6 @@ This platform allows users to explore events, view detailed information, and mak
 - **Bootstrap** — Responsive layout  
 - **AOS** — Scroll Animations  
 
----
-
-## 📁 Project Structure
-
-src/
-├── app/
-│ ├── pages/
-│ │ ├── home/ # Homepage with events
-│ │ ├── login/ # Login form
-│ │ ├── register/ # Registration form
-│ │ ├── event-details/ # Full event info
-│ │ ├── admin/ # Admin panel for managing events
-│ │ └── congrats/ # Booking confirmation
-│ ├── services/
-│ │ ├── auth.service.ts
-│ │ ├── event.service.ts
-│ │ └── firestore.service.ts
-│ └── guards/
-│ └── admin.guard.ts
-
 
 ---
 
@@ -78,26 +58,69 @@ ng serve
 
 ---
 
+---
+
 ## 🔥 Firebase Setup Checklist
 
--Enable Firebase Authentication (Email/Password)
--Enable Cloud Firestore
--Create 2 collections:
--events
--bookings
--Add test user: admin@example.com
--Password: "123456"
--Deploy your Firebase config in Angular's environment.ts
+To connect this project to Firebase properly, follow these exact steps:
+
+1. ✅ **Enable Firebase Authentication**
+   - Go to **Firebase Console → Authentication → Sign-in method**
+   - Enable **Email/Password**
+
+2. ✅ **Enable Firestore Database**
+   - Go to **Firestore Database**
+   - Click **Create database**
+   - Choose test mode or secure rules as needed
+
+3. ✅ **Create Required Collections**
+   - `events` — to store all event data (id, name, date, time, venue, etc.)
+   - `bookings` — to store booking records with user name, email, event ID, event name, and booked date
+
+4. ✅ **Add Test Admin User**
+   - Manually create a user via **Authentication → Users**
+   - Email: `admin@example.com`
+   - Set a password (e.g. `admin123`)
+   - This user will have access to the admin panel
+
+5. ✅ **Update Firebase Config in Angular**
+   - Open `src/environments/environment.ts`
+   - Paste your Firebase config from Firebase Console:
+     ```ts
+     export const environment = {
+       production: false,
+       firebase: {
+         apiKey: 'YOUR_API_KEY',
+         authDomain: 'YOUR_PROJECT.firebaseapp.com',
+         projectId: 'YOUR_PROJECT_ID',
+         storageBucket: 'YOUR_PROJECT.appspot.com',
+         messagingSenderId: 'YOUR_SENDER_ID',
+         appId: 'YOUR_APP_ID'
+       }
+     };
+     ```
 
 ---
 
-##🌍 Language & Theme
+## 🌍 Language & Theme Support
 
--English & Arabic — fully translatable using ngx-translate
--🌓 Light & Dark mode — saved in localStorage
--↔️ Arabic uses RTL direction automatically
+1. 🌐 **Multilingual Support**
+   - Uses `@ngx-translate/core` for language translation
+   - Supports **English 🇬🇧** and **Arabic 🇸🇦**
+   - Strings are stored in `assets/i18n/en.json` and `ar.json`
+   - Automatically switches layout to **RTL** for Arabic
+
+2. 🎨 **Theme Toggle**
+   - Supports **Light** and **Dark** mode
+   - Saved to `localStorage` to remember user preference
+   - Toggle using the moon/sun icon in the navbar
+
+3. 🧠 **Smart UI Behavior**
+   - Direction (`ltr` or `rtl`) is automatically applied based on selected language
+   - Theme and language settings persist across sessions
 
 ---
+
 
 
 
