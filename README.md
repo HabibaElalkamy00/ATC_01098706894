@@ -7,43 +7,48 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 Welcome to the interactive Event Booking Web App built with Angular + Firebase!
 
-## 🚀 Project Overview
 This platform allows users to explore events, view detailed information, and make bookings. It features full authentication, multilingual support (English/Arabic), light/dark mode, and an admin panel for managing events and viewing bookings.
+
+---
 
 ## ✨ Features
 
-- 🔐 Login & Register via Firebase Authentication
-- 📅 View events and book only one event per user
-- 📄 Detailed event information with image, map, speakers, price, and tickets
-- ✅ Congrats page after booking
-- 🧾 Admin Panel to Add / Edit / Delete events and manage bookings
-- 🌙 Light and Dark Theme support
-- 🌐 Full English & Arabic language translation
-- 🔒 Admin page access protected by route guard
-- 📦 Bookings saved to Firebase Firestore
-- 🔄 Language direction changes dynamically (LTR/RTL)
+- 🔐 Firebase Authentication (Login/Register)
+- 📅 View upcoming events
+- 📄 Full event details with images, description, map, and speakers
+- ✅ Only one booking allowed per user
+- 🎉 Congrats page after successful booking
+- 🧾 Admin Panel: Add/Edit/Delete Events + View Bookings
+- 🌙 Light & Dark Theme support (toggle switch)
+- 🌐 English / Arabic support with RTL direction for Arabic
+- 🔒 Admin-only access to admin panel (secured route guard)
+- 📦 Bookings stored in Firebase Firestore
+- 🚫 Already booked event disables Book Now button
 
-## 🛠️ Technologies Used
+---
 
-| Tool         | Purpose                        |
-|--------------|--------------------------------|
-| Angular      | Frontend framework             |
-| Firebase     | Auth & Firestore               |
-| AngularFire  | Firebase SDK for Angular       |
-| ngx-translate| Internationalization (i18n)    |
-| Bootstrap    | Responsive UI design           |
-| AOS          | Scroll animations              |
+## 🛠️ Built With
 
-## 📁 Project Structure (Simplified)
+- **Angular** — Frontend Framework  
+- **Firebase** — Backend (Auth + Firestore)  
+- **AngularFire** — Angular + Firebase integration  
+- **ngx-translate** — Language switching (i18n)  
+- **Bootstrap** — Responsive layout  
+- **AOS** — Scroll Animations  
+
+---
+
+## 📁 Project Structure
+
 src/
 ├── app/
 │ ├── pages/
-│ │ ├── home/ # Home page
-│ │ ├── login/ # Login page
-│ │ ├── register/ # Register page
+│ │ ├── home/ # Homepage with events
+│ │ ├── login/ # Login form
+│ │ ├── register/ # Registration form
 │ │ ├── event-details/ # Full event info
-│ │ ├── admin/ # Admin panel
-│ │ └── congrats/ # Booking success
+│ │ ├── admin/ # Admin panel for managing events
+│ │ └── congrats/ # Booking confirmation
 │ ├── services/
 │ │ ├── auth.service.ts
 │ │ ├── event.service.ts
@@ -52,14 +57,49 @@ src/
 │ └── admin.guard.ts
 
 
+---
+
 ## 🧪 How to Run the Project
 
-1. **Clone the Repository**
 ```bash
+# 1. Clone the repo
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
 
-## Install Dependencies
+# 2. Install dependencies
 npm install
+
+# 3. Add your Firebase config in environment.ts
+
+# 4. Run the app
+ng serve
+
+```
+
+---
+
+## 🔥 Firebase Setup Checklist
+
+-Enable Firebase Authentication (Email/Password)
+-Enable Cloud Firestore
+-Create 2 collections:
+-events
+-bookings
+-Add test user: admin@example.com
+-Password: "123456"
+-Deploy your Firebase config in Angular's environment.ts
+
+---
+
+##🌍 Language & Theme
+
+-English & Arabic — fully translatable using ngx-translate
+-🌓 Light & Dark mode — saved in localStorage
+-↔️ Arabic uses RTL direction automatically
+
+---
+
+
+
 
 
