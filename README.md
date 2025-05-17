@@ -2,58 +2,64 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.10.
 
-## Development server
 
-To start a local development server, run:
+# 🎉 Event Booking Platform
 
+Welcome to the interactive Event Booking Web App built with Angular + Firebase!
+
+## 🚀 Project Overview
+This platform allows users to explore events, view detailed information, and make bookings. It features full authentication, multilingual support (English/Arabic), light/dark mode, and an admin panel for managing events and viewing bookings.
+
+## ✨ Features
+
+- 🔐 Login & Register via Firebase Authentication
+- 📅 View events and book only one event per user
+- 📄 Detailed event information with image, map, speakers, price, and tickets
+- ✅ Congrats page after booking
+- 🧾 Admin Panel to Add / Edit / Delete events and manage bookings
+- 🌙 Light and Dark Theme support
+- 🌐 Full English & Arabic language translation
+- 🔒 Admin page access protected by route guard
+- 📦 Bookings saved to Firebase Firestore
+- 🔄 Language direction changes dynamically (LTR/RTL)
+
+## 🛠️ Technologies Used
+
+| Tool         | Purpose                        |
+|--------------|--------------------------------|
+| Angular      | Frontend framework             |
+| Firebase     | Auth & Firestore               |
+| AngularFire  | Firebase SDK for Angular       |
+| ngx-translate| Internationalization (i18n)    |
+| Bootstrap    | Responsive UI design           |
+| AOS          | Scroll animations              |
+
+## 📁 Project Structure (Simplified)
+src/
+├── app/
+│ ├── pages/
+│ │ ├── home/ # Home page
+│ │ ├── login/ # Login page
+│ │ ├── register/ # Register page
+│ │ ├── event-details/ # Full event info
+│ │ ├── admin/ # Admin panel
+│ │ └── congrats/ # Booking success
+│ ├── services/
+│ │ ├── auth.service.ts
+│ │ ├── event.service.ts
+│ │ └── firestore.service.ts
+│ └── guards/
+│ └── admin.guard.ts
+
+
+## 🧪 How to Run the Project
+
+1. **Clone the Repository**
 ```bash
-ng serve
-```
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Install Dependencies
+npm install
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
