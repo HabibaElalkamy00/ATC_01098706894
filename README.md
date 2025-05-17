@@ -58,8 +58,6 @@ ng serve
 
 ---
 
----
-
 ## 🔥 Firebase Setup Checklist
 
 To connect this project to Firebase properly, follow these exact steps:
@@ -80,7 +78,7 @@ To connect this project to Firebase properly, follow these exact steps:
 4. ✅ **Add Test Admin User**
    - Manually create a user via **Authentication → Users**
    - Email: `admin@example.com`
-   - Set a password (e.g. `admin123`)
+   - Set a password (e.g. `123456`)
    - This user will have access to the admin panel
 
 5. ✅ **Update Firebase Config in Angular**
